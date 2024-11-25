@@ -58,18 +58,18 @@ export const VirtualList = <T,>({
     }
   };
 
+  // Индексы начала и конца видимого списка
   const startIndex = Math.max(
     0,
-    Math.floor(scrollOffset / totalItemHeight) - bufferStart
+    Math.floor((scrollOffset - gap) / totalItemHeight) - bufferStart
   );
   const endIndex = Math.min(
     items.length,
     startIndex + visibleCount + bufferEnd
   );
 
-  // Высота списка без учета последнего gap
-  const totalHeight =
-    items.length > 0 ? items.length * totalItemHeight - gap : 0;
+  // Общая высота списка
+  const totalHeight = Math.max(0, items.length * totalItemHeight - gap);
 
   // Видимые элементы
   const visibleItems = items.slice(startIndex, endIndex);
@@ -101,7 +101,9 @@ export const VirtualList = <T,>({
             key={startIndex + index}
             className={styles.item}
             style={{
-              top: `${(startIndex + index) * totalItemHeight}px`,
+              transform: `translateY(${
+                (startIndex + index) * totalItemHeight
+              }px)`,
               height: `${itemHeight}px`,
             }}
           >
