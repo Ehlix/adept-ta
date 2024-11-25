@@ -1,0 +1,52 @@
+@use '@/shared/styles/colors.scss' as *;
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.input {
+  display: none;
+}
+
+.box {
+  width: 20px;
+  height: 20px;
+  border: 2px solid $color-border;
+  border-radius: 4px;
+  background-color: $color-white;
+  transition: background-color 0.2s, border-color 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:after {
+    content: '';
+    display: none;
+    width: 10px;
+    height: 10px;
+    background-color: $color-primary;
+    border-radius: 2px;
+  }
+}
+
+.input:checked + .box {
+  border-color: $color-primary;
+  background-color: $color-primary;
+
+  &:after {
+    display: block;
+  }
+}
+
+.label {
+  margin-left: 8px;
+  font-size: 14px;
+  color: $color-text;
+}

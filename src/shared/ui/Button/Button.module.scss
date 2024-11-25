@@ -1,0 +1,39 @@
+@use '@/shared/styles/colors.scss' as *;
+
+.button {
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+}
+
+.default {
+  background-color: $color-primary;
+  color: $color-white;
+  &:hover {
+    background-color: $color-primary-dark;
+  }
+}
+
+.destructive {
+  background-color: $color-destructive;
+  color: $color-white;
+  &:hover {
+    background-color: $color-destructive-dark;
+  }
+}
+
+.secondary {
+  background-color: $color-secondary;
+  color: $color-white;
+  &:hover {
+    background-color: $color-secondary-dark;
+  }
+}

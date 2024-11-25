@@ -1,0 +1,14 @@
+@use "reset";
+@use '@/shared/styles/colors.scss' as *;
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: $color-background;
+  color: #333;
+}
+
+h1 {
+  font-size: 24px;
+  color: #444;
+}

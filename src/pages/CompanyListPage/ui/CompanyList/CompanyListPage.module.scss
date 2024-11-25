@@ -1,0 +1,63 @@
+@use '@/shared/styles/colors.scss' as *;
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background-color: $color-background;
+  height: 100dvh;
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-white;
+  padding: 15px 10px;
+  border-radius: 8px;
+  box-shadow: $box-shadow;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.pageTitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: $color-black;
+}
+
+.actionsContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.actionButton {
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  color: $color-white;
+  background-color: $color-primary;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $color-primary-dark;
+  }
+
+  &:disabled {
+    background-color: $color-disabled;
+    cursor: not-allowed;
+  }
+}
+
+.tableContainer {
+  box-shadow: $box-shadow;
+  border-radius: 8px;
+  background-color: $color-secondary;
+  height: fit-content;
+  max-height: 100%;
+  overflow: hidden;
+}
